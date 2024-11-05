@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style2.css">
+    <title>Happy Birthday</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* Styling untuk membuat background transparan dan border putih */
+        .card {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            /* Untuk warna teks */
+        }
+
+        /* Styling tambahan untuk memastikan gambar tidak terlalu dominan */
+        .img-fluid {
+            opacity: 0.8;
+            /* Sedikit transparan untuk keselarasan */
+        }
+
+        /* Untuk teks card */
+        .card-title,
+        .card-text {
+            color: white;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-6 text-white mb-3">
+                <button id="confettiButton" onclick="launchConfetti1()">Pertama, Click Me! 🎉</button>
+                <div id="message1" class="message mt-3">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 text-white mb-3">
+                <button id="confettiButton2" onclick="launchConfetti2()">Kedua, Click Me! 🎉</button>
+                <div id="message2" class="message mt-3">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 text-white mb-3">
+                <button id="confettiButton3" onclick="launchConfetti3()">Ketiga, Click Me! 🎉</button>
+                <div id="message3" class="message mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        let isMessage1Shown = false;
+        let isMessage2Shown = false;
+        let isMessage3Shown = false;
+
+        function typeMessage(element, message, index) {
+            if (index < message.length) {
+                element.innerHTML += message.charAt(index);
+                index++;
+                setTimeout(() => typeMessage(element, message, index), 30);
+            }
+        }
+
+        function launchConfetti1() {
+            // Confetti pertama
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.75 }
+            });
+
+            // Pesan pertama
+            if (!isMessage1Shown) {
+                const messageElement = document.getElementById('message1');
+                messageElement.style.display = 'block';
+                const messageText = `Coba lihat kebelakang sudah berapa banyak berbagai hal yang telah kamu lewati. Sekarang sudah menduduki 21 tahun berarti yaa, makin tua aja nih wkwkw. Sudah banyak momen-momen seru dan lika-liku kehidupan yang telah kamu lewati. Dari masa kecil yang penuh dengan kepolosan dan keceriaan, hingga saat ini di usia dewasa yang penuh dengan tanggung jawab dan kesempatan baru.`;
+                const htmlMessage = messageText.replace(/\n/g, '<br>');
+                typeMessage(messageElement, htmlMessage, 0);
+                isMessage1Shown = true;
+            }
+        }
+
+        function launchConfetti2() {
+            // Confetti kedua dengan gaya dan warna yang berbeda
+            confetti({
+                particleCount: 200,
+                spread: 90,
+                origin: { y: 0.75 },
+                colors: ['#bb0000', '#ffffff'] // Warna confetti berbeda
+            });
+
+            // Pesan kedua
+            if (!isMessage2Shown) {
+                const messageElement = document.getElementById('message2');
+                messageElement.style.display = 'block';
+                const messageText = `Thank you for still being here, still pushing through all the ups and downs in this wild journey we call life. Beneran, kamu tuh hebat banget. Bahkan meski nggak selalu terlihat, semua yang udah kamu capai itu super berarti dan berharga. Dari pencapaian besar sampai hal-hal kecil yang mungkin cuma kamu tahu, semuanya bikin kamu jadi sosok yang luar biasa di usia ini. Proud of you!!! Semoga di tahun ini dan setiap tahun yang akan datang membawa lebih banyak kebahagiaan dan kesuksesan buat kamu. Sudah memasuki tengah semester juga nih kan ya pasti banyak hal yang harus diurus, semangat ya. Semoga kamu bisa handle semuanya, kuliah nya dan segala urusan nya dilancarakan dan keinginan kamu yang lainnya bisa kamu dapatkan. You got this!`;
+                const htmlMessage = messageText.replace(/\n/g, '<br>');
+                typeMessage(messageElement, htmlMessage, 0);
+                isMessage2Shown = true;
+            }
+        }
+
+        function launchConfetti3() {
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.75 },
+                colors: ['#00bb00', '#ffffff']
+            });
+
+            // Pesan kedua
+            if (!isMessage3Shown) {
+                const messageElement = document.getElementById('message3');
+                messageElement.style.display = 'block';
+                const messageText = `Di usia ini, yang beranjak dewasa, jangan lupa bahwa kamu nggak perlu selalu tampil kuat atau sempurna, nggak harus selalu terlihat keren dan baik-baik saja. Kadang, boleh kok mengeluh, istirahat, atau bahkan merasa lelah. Justru itu yang bikin kamu tetap manusiawi—punya sisi rentan yang wajar dan alami. Ingat, nggak ada salahnya untuk melepas sejenak apa yang terasa berat, dan nggak semua hal harus dipaksakan. Hidup bukan kompetisi, jadi nggak perlu membandingkan dirimu dengan orang lain. Nikmati prosesnya, dan izinkan diri untuk beristirahat ketika butuh. Semuanya akan baik-baik saja. Kamu luar biasa apa adanya, dengan segala kelebihan dan kekurangan yang kamu miliki.`;
+                const htmlMessage = messageText.replace(/\n/g, '<br>');
+                typeMessage(messageElement, htmlMessage, 0);
+                isMessage3Shown = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style2.css">
+    <title>Happy Birthday</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .container {
+            font-family: 'Bubblegum Sans', cursive; /* Menggunakan font Bubblegum Sans */
+            font-size: 0.9em; /* Ukuran font lebih kecil */
+        }
+        .card-img-overlay {
+            text-align: left;
+            /* Atur teks agar sejajar ke kiri */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Atur posisi vertikal ke atas */
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: 'Pacifico', cursive;
+            margin-bottom: 20px;
+        }
+
+        button {
+            align-self: flex-start;
+            /* Pastikan tombol sejajar ke kiri */
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #0056b3;
+            /* Warna tombol saat dinonaktifkan */
+            cursor: not-allowed;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            font-size: 18px;
+            display: none;
+            /* Sembunyikan teks awalnya */
+            white-space: pre-wrap;
+            /* Menjaga spasi dan baris baru */
+        }
+
+            .bordered-text {
+        border: 2px solid #ffffff; /* Mengatur border */
+        padding: 10px; /* Memberikan ruang di dalam border */
+        border-radius: 8px; /* Memberikan sudut yang membulat */
+        background-color: rgba(255, 255, 255, 0.1); /* Warna latar belakang transparan */
+    }
+
+    @keyframes fadeInSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    </style>
+
+</head>
+
+<body>
+    <div class="container text-white">
+        <div class="container text-white">
+            <p class="bordered-text">
+                Tepat pada tanggal 5 November, sosok yang berharga lahir ke dunia ini, membawa kehangatan dan keceriaan ke dalam kehidupan banyak orang. Sejak hari itu, jejaknya telah menjadi bagian tak terpisahkan dari kisah-kisah kehidupan dan memperkaya setiap momen. Tak dipungkiri, di setiap tahun yang berlalu, dirinya telah mendapatkan pertumbuhan dan pencapaian yang luar biasa. Hari ini, tepat pada hari kelahirannya. Dia telah berhasil melalui semua tantangan dan kebahagiaannya lagi.
+            </p>
+        </div>
+
+        <a href="birthday.html" class="btn btn-secondary btn-sm" role="button">Click Me!</a>
+
+    </div>
+
+    <!-- Include Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+</body>
+
+</html>
